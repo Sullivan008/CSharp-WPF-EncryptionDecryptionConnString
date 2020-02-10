@@ -16,6 +16,37 @@ About the application technologies and operation:
    ```
    Update-Package -reinstall
    ```
+   
+2. Open CMD and Create a new **SQLLocalDB Instance** named **LocalDBExample**
+
+   ```
+   SQLLocalDB create LocalDBExample
+   ```
+
+3. Connect to **LocalDBExample Instance** with **Windows Authentication**
+
+   ```
+   (LocalDB)\LocalDBExample
+   ```
+   
+4. **CREATE** necessary **DATABASE** with the following **SCRIPT**
+
+   ```SQL
+   CREATE DATABASE ClientDB;
+   ```
+   
+5. **CREATE** necessary **TABLES** with the following **SCRIPT** (The scripts can be found in the following folder: **DB TABLES**)
+
+   ```SQL
+   USE ClientDB;
+
+    CREATE TABLE [dbo].[Client] (
+        [ID]     INT           IDENTITY (1, 1) NOT NULL,
+        [Amount] INT           NULL,
+        [Name]   NVARCHAR (50) NULL,
+        CONSTRAINT [PK_Client] PRIMARY KEY CLUSTERED ([ID] ASC)
+    );
+    ```
      
 ### About the application:
 
